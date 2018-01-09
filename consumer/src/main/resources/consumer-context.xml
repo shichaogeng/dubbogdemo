@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:soa="http://www.gengsc.com/schema/soa"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.gengsc.com/schema/soa http://www.gengsc.com/schema/soa.xsd">
+
+    <soa:reference id="userServiceImpl" interface="com.gengsc.user.service.UserService" loadbalance="round" protocol="netty"></soa:reference>
+
+    <!--<soa:protocol name="netty" host="127.0.0.1" port="1234"/>-->
+    <!--<soa:protocol name="rmi" host="127.0.0.1" port="12345"/>-->
+
+    <soa:registry protocol="redis" address="47.94.170.46:7070"></soa:registry>
+
+</beans>
